@@ -3,40 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EL DORADO Collectables</title>
+  <title>EL DORADO COLLECTABLES</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&family=Senlot+Serif&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Open Sans', sans-serif;
       background-color: #d4af37;
       color: #1b1b1b;
+      overflow-x: hidden;
+      position: relative;
     }
+
+    .wave-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .wave-bg svg {
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      animation: waveFlow 10s linear infinite;
+    }
+
+    .wave-bg svg:nth-child(2) {
+      animation-delay: -5s;
+      opacity: 0.6;
+    }
+
+    @keyframes waveFlow {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     header {
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      background-color: #d4af37;
+      align-items: center;
       text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 2;
     }
+
     .logo {
       max-width: 150px;
       margin-bottom: 20px;
     }
+
     h1 {
       font-family: 'Senlot Serif', serif;
       font-size: 2.5rem;
       color: #1b1b1b;
-      margin: 0;
       text-transform: uppercase;
     }
+
     p {
       font-size: 1.1rem;
       max-width: 600px;
       margin: 20px auto 30px;
     }
+
     .btn {
       background-color: #1b1b1b;
       color: #d4af37;
@@ -44,43 +83,57 @@
       text-decoration: none;
       border-radius: 4px;
       font-weight: bold;
-      transition: background 0.3s ease;
     }
-    .btn:hover {
-      background-color: #333;
-    }
+
     section {
       padding: 60px 20px;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
+
     h2 {
-      color: #1b1b1b;
       font-family: 'Senlot Serif', serif;
       text-transform: uppercase;
+      color: #1b1b1b;
     }
+
     footer {
       padding: 30px;
       text-align: center;
       background-color: #c59e2b;
       color: #1b1b1b;
       font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
     }
+
     a {
       color: #1b1b1b;
     }
   </style>
 </head>
 <body>
+
+  <div class="wave-bg">
+    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+      <path d="M0,100 C300,200 900,0 1200,100 L1200,0 L0,0 Z" fill="#014421" />
+    </svg>
+    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+      <path d="M0,100 C300,200 900,0 1200,100 L1200,0 L0,0 Z" fill="#1c5c39" />
+    </svg>
+  </div>
+
   <header>
     <img src="logo.png" alt="EL DORADO COLLECTABLES Logo" class="logo" />
-    <h1>EL DORADO Collectables</h1>
+    <h1>EL DORADO COLLECTABLES</h1>
     <p>Where legends are collected — rare coins, precious metals, and timeless artefacts curated for collectors and investors alike.</p>
     <a href="#about" class="btn">Explore More</a>
   </header>
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Inspired by the legend of El Dorado, we source and present exceptional collectables, including PCGS/NGC graded coins, bullion, and rare pieces with historical significance. Our mission is to bring timeless value into the hands of discerning collectors.</p>
+    <p>Inspired by the legend of EL DORADO, we source and present exceptional collectables, including PCGS/NGC-graded coins, bullion, and rare pieces with historical significance. Our mission is to bring timeless value into the hands of discerning collectors.</p>
   </section>
 
   <section>
